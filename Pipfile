@@ -7,6 +7,8 @@ name = "pypi"
 beautifulsoup4 = "*"
 requests = "*"
 jq = "*"
+python-slugify = "*"
+jinja2 = "*"
 
 [dev-packages]
 

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <title>
+        {{pigment_id}} - {{pigment_name}}
+    </title>
+    <link rel="stylesheet" href="/spectre.min.css">
+    <link rel="stylesheet" href="/spectre-exp.min.css">
+    <link rel="stylesheet" href="/spectre-icons.min.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="columns">
+        <div class="column col-lg-12">
+            <h1>
+                {{pigment_id}} - {{pigment_name}}
+            </h1>
+
+            {% if single %}
+            <h2>
+                Single-Pigment Formulations
+            </h2>
+            <ul>
+                {% for paint in single %}
+                <li>
+                    <a href="{{paint[1]}}">{{paint[0]}}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if multiple %}
+            <h2>
+                Multi-Pigment Formulations
+            </h2>
+            <ul>
+
+                {% for paint in multiple %}
+                <li>
+                    <a href="{{paint[1]}}">{{paint[0]}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

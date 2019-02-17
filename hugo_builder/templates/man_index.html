@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <title>Watercolor Pigment Database</title>
+    <link rel="stylesheet" href="spectre.min.css">
+    <link rel="stylesheet" href="spectre-exp.min.css">
+    <link rel="stylesheet" href="spectre-icons.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="columns">
+        <div class="column col-lg-12">
+            <h1>Manufacturers</h1>
+            <ul>
+                {% for manufacturer, man_slug in manufacturers %}
+                <li>
+                    <a href="/paints/{{man_slug}}/index.html">{{manufacturer}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

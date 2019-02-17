@@ -1,9 +1,10 @@
-from bs4 import BeautifulSoup
-import requests
 import json
-from jq import jq
 import logging
 import sys
+
+import requests
+from bs4 import BeautifulSoup
+from jq import jq
 
 
 class PigmentScraper:
