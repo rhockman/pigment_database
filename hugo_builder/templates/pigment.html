@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <title>
-        {{pigment_id}} - {{pigment_name}}
+        {{pigment_code}} - {{pigment_name}}
     </title>
     <link rel="stylesheet" href="/spectre.min.css">
     <link rel="stylesheet" href="/spectre-exp.min.css">
@@ -13,7 +13,7 @@
     <div class="columns">
         <div class="column col-lg-12">
             <h1>
-                {{pigment_id}} - {{pigment_name}}
+                {{pigment_code}} - {{pigment_name}}
             </h1>
 
             {% if single %}
@@ -36,7 +36,7 @@
 
                 {% for paint in multiple %}
                 <li>
-                    <a href="{{paint[1]}}">{{paint[0]}}</a>
+                    <a href="{{paint[1]}}">{{paint[0]}}</a> ({{paint[2]}} total pigments)
                 </li>
                 {% endfor %}
             </ul>
