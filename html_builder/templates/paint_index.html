@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}
+{{manufacturer}} paints
+{% endblock %}
+{% block main_content %}
+<h1>{{manufacturer}}</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Pigment Count</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for paint, paint_slug, pigment_count in paints %}
+    <tr>
+        <td><a href="{{root_path}}/paints/{{man_slug}}/{{paint_slug}}.html">{{paint}}</a></td>
+
+        <td>
+        {% if pigment_count == 1 %}
+         <span class="label label-primary label-rounded">1 Pigment</span>
+        {% elif pigment_count > 3 %}
+         <span class="label label-error label-rounded">{{pigment_count}} Pigments</span>
+        {% else %}
+        <span class="label label-rounded">{{pigment_count}} Pigments</span>
+        {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+</ul>
+{% endblock %}
+

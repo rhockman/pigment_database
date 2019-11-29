@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{root_path}}/spectre.min.css">
+    <link rel="stylesheet" href="{{root_path}}/spectre-exp.min.css">
+    <link rel="stylesheet" href="{{root_path}}/spectre-icons.min.css">
+</head>
+<body>
+<div class="container">
+    {% include "header.html" %}
+    {% block hero %}
+    {% endblock %}
+    <div class="column col-12">
+        {% block main_content %}
+        {% endblock %}
+    </div>
+    {% include "footer.html" %}
+</div>
+</body>
+</html>

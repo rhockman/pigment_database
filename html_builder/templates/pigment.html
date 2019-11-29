@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block title %}
+{{pigment_code}} - {{pigment_name}}
+{% endblock %}
+
+{% block main_content %}
+<h1>
+    {{pigment_code}} - {{pigment_name}}
+</h1>
+
+{% if pigment_description %}
+<div class="panel">
+    <div class="panel-body">
+        {{pigment_description}}
+    </div>
+</div>
+{% endif %}
+
+{% if pigment_links %}
+<div class="panel">
+    <div class="panel-body">
+        <h4>Additional Info on {{pigment_code}} - {{pigment_name}}</h4>
+        <ul>
+            {% for pigment_link in pigment_links %}
+            <li><a href="{{pigment_link[1]}}" target="_blank">{{pigment_link[0]}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+{% if single %}
+<h2>
+    Single-Pigment Formulations
+</h2>
+<ul>
+    {% for paint in single %}
+    <li>
+        <a href="{{paint[1]}}">{{paint[0]}}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if multiple %}
+<h2>
+    Multi-Pigment Formulations
+</h2>
+<ul>
+
+    {% for paint in multiple %}
+    <li>
+        <a href="{{paint[1]}}">{{paint[0]}}</a> ({{paint[2]}} total pigments)
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+

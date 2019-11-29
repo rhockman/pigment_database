@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+List of Pigments
+{% endblock %}
+{% block main_content %}
+<h1>
+    Pigments
+</h1>
+
+<ul>
+    {% for pigment in nav_pigments %}
+    <li>
+        <a href="{{root_path}}/pigments/{{pigment[2]}}-{{pigment[3]}}.html">{{pigment[0]}} - {{pigment[1]}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

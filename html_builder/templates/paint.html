@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}{{manufacturer}} - {{paint_name}}{% endblock %}
+{% block main_content %}
+<h1>
+    <a href="{{root_path}}/paints/{{man_slug}}/index.html">{{manufacturer}}</a> - {{paint_name}}
+</h1>
+
+<ul>
+    {% for pigment in pigments %}
+    <li>
+        <a href="{{root_path}}/pigments/{{pigment[2]}}">{{pigment[0]}} - {{pigment[1]}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+

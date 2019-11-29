@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}
+Watercolor Pigment Database
+{% endblock %}
+
+{% block main_content %}
+<div class="hero">
+    <div class="hero-body">
+        <h1>About</h1>
+        <p>I built this site after being frustrated by trying to find and compare pigments across
+            different brands.  I wanted a small fast site that had info on what pigments were used
+            in my paints and, for a given pigment, which paints used it.</p>
+        <p>I couldn't find anything that fit the bill.  <a href="https://www.handprint.com">Handprint</a>
+            has been around for ages, but hasn't updated in a while and is often overwhelming.
+            <a href="https://singlepigmentpaints.com/">Single Pigment Paints</a> was close to what I wanted,
+            but without the filter of being single-pigment only.</p>
+        <p>Since I couldn't find it, I made my own.  Hope you enjoy it!  The source code and data are available
+            on <a href="https://github.com/rhockman/pigment_database">GitHub</a> if you're of a hacker mindset.
+            That's also where you can <a href="https://github.com/rhockman/pigment_database/issues">report a problem
+            or request a change</a> by filing an issue.</p>
+        <p>All the paints currently in the database are <strong>Artist Grade</strong>.</p>
+    </div>
+</div>
+<h4>Manufacturers</h4>
+<ul>
+    {% for manufacturer, man_slug, paint_count in manufacturers %}
+    <li>
+        <a href="{{root_path}}/paints/{{man_slug}}/index.html">{{manufacturer}}</a> - {{paint_count}} paints
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}}
